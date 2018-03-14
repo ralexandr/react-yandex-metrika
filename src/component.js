@@ -14,9 +14,9 @@ class YMInitializer extends Component {
         el.type = 'text/javascript';
         el.async = true;
         el.src = this.props.scriptPath || scriptPath(this.props.version);
-        function insertScript() {
+        const insertScript = () => {
             this.insertPoint.insertBefore(el, null);
-        }
+        };
         if (window.opera === '[object Opera]') {
             document.addEventListener('DOMContentLoaded', insertScript, false);
         } else {
