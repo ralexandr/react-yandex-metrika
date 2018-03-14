@@ -1,6 +1,6 @@
 {
   "name": "react-yandex-metrika",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "Yandex Metrika component for React",
   "main": "./lib/index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/narkq/react-yandex-metrika"
+    "url": "https://github.com/ralexandr/react-yandex-metrika"
   },
   "keywords": [
     "react-component",
@@ -16,7 +16,7 @@
     "yandex-metrika",
     "component"
   ],
-  "author": "Alex Sladkov <sladkov@gmail.com>",
+  "author": "Alexander Radyushin <alexander@fjedi.com>",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {

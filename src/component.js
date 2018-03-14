@@ -13,8 +13,15 @@ class YMInitializer extends Component {
         let el = document.createElement('script');
         el.type = 'text/javascript';
         el.async = true;
-        el.src = scriptPath(this.props.version);
-        this.insertPoint.insertBefore(el, null);
+        el.src = this.props.scriptPath || scriptPath(this.props.version);
+        function insertScript() {
+            this.insertPoint.insertBefore(el, null);
+        }
+        if (window.opera === '[object Opera]') {
+            document.addEventListener('DOMContentLoaded', insertScript, false);
+        } else {
+            insertScript();
+        }
     }
 
     render() {
@@ -33,6 +40,7 @@ class YMInitializer extends Component {
 YMInitializer.displayName = 'YMInitializer';
 
 YMInitializer.propTypes = {
+    scriptPath: PropTypes.string,
     accounts: PropTypes.arrayOf(PropTypes.number).isRequired,
     containerElement: PropTypes.string,
     options: PropTypes.object,
@@ -40,6 +48,7 @@ YMInitializer.propTypes = {
 };
 
 YMInitializer.defaultProps = {
+    scriptPath: undefined,
     containerElement: 'div',
     options: {},
     version: '1'
